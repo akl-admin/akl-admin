@@ -186,7 +186,7 @@ body {
 	  bottom: 0;
 	  left: 0;
 	  right: 0;
-	  background-image: url("/static/images/th%C3%A9%C3%A2tre-d'op%C3%A9ra-spatial.jfif");  /* https://images.pexels.com/photos/2310815/pexels-photo-2310815.jpeg?cs=srgb&dl=photo-of-opened-metal-windows-2310815.jpg&fm=jpg */
+	  background-image: url("https://github.com/akl-admin/akl-admin.github.com/blob/5a60778b622769a3c7008234d1bad9e384c82b57/th%C3%A9%C3%A2tre-d'op%C3%A9ra-spatial.jfif");
 	  background-size: cover;
 	  background-position: center;
 	  /* 核心，按z轴向远处移动1px，大小会缩小一倍，使用scale放大到原图大小 */
