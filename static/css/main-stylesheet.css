@@ -216,7 +216,7 @@ body {
 	  bottom: 0;
 	  left: 0;
 	  right: 0;
-	  background-image: url("th%C3%A9%C3%A2tre-d'op%C3%A9ra-spatial.jfif"); 
+	  background-image: url("https://miro.medium.com/max/1400/1*bnEt1vwCplHtOlJXKPes2w.jpeg"); 
 	  background-size: cover;
 	  background-position: center;
 	  /* 核心，按z轴向远处移动1px，大小会缩小一倍，使用scale放大到原图大小 */
