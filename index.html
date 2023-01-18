@@ -13,7 +13,7 @@
     <!-- Configuations of Layout Viewport -->
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
-    <link rel="stylesheet" type="text/css" href="static/css/main-stylesheet.css"> <!-- Import main stylesheet -->
+    <link rel="stylesheet" type="text/css" href="static/css/css-rolling.css"> <!-- Import main stylesheet -->
 
     <script type="text/javascript">
         
@@ -27,15 +27,30 @@
 </head>
 
 <body>
-    <div id="header" class="header">
-		<h1>This is a header A really really long header</h1>
-		<div id="header-main-sliper" class="sliper">↓ Slip to Continue | 下滑继续</div>
-	</div>
+	
     
-    <!-- main container -->
+	
+	<div id="header-bg-img" class="bg-img">
+		<div class="upper-left-title">
+			<p>问卷 | Survey Form</p>
+		</div>
+		<div class="header">
+			<div class="abs-wrapper">
+				<div id="main-title-box" class="main-title-box">
+					<h1>AI绘画生成物调查</h1>
+				</div>
+				<div id="header-main-sliper" class="sliper">Slip to Continue&emsp;↓&emsp;下滑继续</div>
+			</div>
+		</div>
+	</div>
+		
+	
+
+    
+    <!-- main ani-btn -->
 <div id="container" class="container">
         
-    <div id="aside" class="aside">
+    <div id="aside" class="aside" style="display: none">
 <!--    <div class="nav" id="nav">-->
         <ul class="nav-pills nav-justified">
             <li role="presentation"><a href="">个人作品</a></li>
@@ -144,18 +159,28 @@
                     </div>
             </div>
             
+			
+				<div id="btn-abs-wrapper" class="abs-wrapper">
+					<div class="ani-btn">
+						<a href="#" class="btn btn_confirm">
+							<p class="label confirm" style="">确认 Confirm</p>
+						</a>
+
+						<a href="#" class="btn btn_cancel">
+							<p class="label cancel" style="">取消 Cancel</p>
+						</a>
+					</div>
+				</div>
+			
+			
         </div>
-        
 
 </div>
-    
-   
-    
     <!-- clear float display -->
     <div style="clear: both"></div>
     
     <!-- footer -->
-    <div id="footer" class="footer">dadsa</div>
+    <div id="footer" class="footer">Copyright &copy; 2023, Roxy Bo. All Rights Reserved.</div>
 </body>
     
 </html>
