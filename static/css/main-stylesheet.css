@@ -332,11 +332,15 @@ body {
 
 /* BUTTON SETTING */
 
-.ani-btn {
-/*    justify-content: center;*/
+#btn-abs-wrapper {
+	position: relative;
 	display: flex;
-	width: var(--main-width);
-	flex-flow: wrap;
+	width: 100%;
+}
+
+.ani-btn {
+	display: flex;
+	flex-flow: wrap row;
 }
 
 .ani-btn .btn {
