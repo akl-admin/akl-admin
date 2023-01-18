@@ -1,28 +1,8 @@
 html {
 /*    font-size: 20px;*/
-    background-color: var(--theme-purple)
-    
+    background-color: var(--orange-ho);
+	letter-spacing: rem;    
 }
-
-
-    /* Compatibility seetings for different resolutions */
-/*
-    @media only screen and (max-width: 320px){
-        font-size: 65.5% !important;
-    }
-    
-    @media only screen, (min-width: 321px) and (max-width: 640px){
-        font-size: 125% !important;
-    }
-    
-    @media only screen, (min-width: 750px) and (max-width: 1241px){
-        font-size: 150% !important;
-    }
-
-    @media only screen and (min-width: 1242px){
-        font-size: 187.5% !important;
-    }
-*/
 
 
 
@@ -47,10 +27,47 @@ html {
     --theme-blue:   #3099FF;
     
 
+	
+	/* HSL colour management */
+	--h: 251;
+	--s: 100%;
+	--l: 66%;
+	
+	
+	
+	--test: var(--orange-l-ho);
+	
+	--orange-h: 30;
+	
+	
+	--orange-test: hsl(var(--orange-h) var(--s) var(--l)  / 0.8);
+	
+	   --orange: hsl(var(--orange-h) var(--s) var(--l) / 1);
+	--orange-ho: hsl(var(--orange-h) var(--s) var(--l)  / 0.8);
+	
+	   --orange-l: hsl(var(--orange-h) calc(0.9 * var(--s)) calc(1.2 * var(--l))  / 1);
+	--orange-l-lo: hsl(var(--orange-h) calc(0.9 * var(--s)) calc(1.2 * var(--l))  / 0.75);
+	--orange-l-mo: hsl(var(--orange-h) calc(0.9 * var(--s)) calc(1.2 * var(--l))  / 0.5);
+	--orange-l-ho: hsl(var(--orange-h) calc(0.9 * var(--s)) calc(1.12 * var(--l))  / 0.35);
+	
+	--orange-d: 0.3rem 0.3rem 1px #eeea;
+	
+	
+	
     
     /* Configurations of Length */
-    --aside-width: 15vw;
+    --aside-width: 0; /*15vw*/
+/*	 --main-width: calc(100vw - var(--aside-width) - 5rem)*/
+	 --main-width: calc(100vw - 4rem);
     
+	
+	
+	
+	
+	/* Shadows */
+	--shadow-d: 0.1rem 0.1rem 1.2px #111a;
+	--shadow-wide: 0.3rem 0.3rem 15px #333a;
+
 }
 
 /*
@@ -72,10 +89,9 @@ div {
 /*  */
 
 .container {
-
     position: relative;
-    left: 2rem;
-    right: 2rem;
+	width: 100vw;
+	margin: 0 2rem;
 
 }
 
@@ -84,18 +100,25 @@ div {
     position: relative;
     display: inline-block;
     
-    background-color: aquamarine;
+    background-color: #fffd;
+	box-shadow: var(--shadow-wide);
+	backdrop-filter: blur(15px);
+	border-radius: 20px;
 
     /* size management*/
-    width:  calc(100vw - 15vw - 5rem);
+    width: var(--main-width);
 /*    min-width: 70vw;*/
+/*
     min-height: 80vh;
     height: 150rem;
+*/
     
 /*    margin-left: calc(15vw + 1rem);*/
-    padding: 1.5rem;
+    padding: 2rem;
     
-    line-height: 1.5rem;
+    line-height: 1.6rem;
+	
+	margin-bottom: 2rem;
     
     
 }
@@ -117,7 +140,11 @@ div {
 
 .footer {
     min-height: 15vh;
-    background-color: red;
+    background-color: #333;
+	text-align: center;
+	color: aliceblue;
+	font-size: 0.618rem;
+	padding-top: 2rem;
 }
 
 /*
@@ -158,27 +185,30 @@ body {
 }
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  transform-style: inherit;
-  /* 需要设置高度以使时差生效 */
-  height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform-style: inherit;
+    /* 需要设置高度以使时差生效 */
+    height: 100vh;
+	width: 100vw;
 }
 
-.header h1 {
-	background-color: rgba(0, 0, 0, 0.7);
-  	color: white;
-	min-width: 61.8vw;
-	max-width: 80vw;
-  	padding: 2.5rem 4.5rem;
-	font-size: 2.5rem;
-	text-align: center;
 
+.bg-img {
+	display: flex;
+/*
+    align-items: center;
+    justify-content: center;
+*/
+    position: relative;
+    transform-style: inherit;
+    /* 需要设置高度以使时差生效 */
+    height: 100vh;
 }
 
-.header::before {
+.bg-img::before {
 	  position: absolute;
 	  content: "";
 	  display: block;
@@ -186,7 +216,7 @@ body {
 	  bottom: 0;
 	  left: 0;
 	  right: 0;
-	  background-image: url("https://miro.medium.com/max/1400/1*bnEt1vwCplHtOlJXKPes2w.jpeg");
+	  background-image: url("th%C3%A9%C3%A2tre-d'op%C3%A9ra-spatial.jfif"); 
 	  background-size: cover;
 	  background-position: center;
 	  /* 核心，按z轴向远处移动1px，大小会缩小一倍，使用scale放大到原图大小 */
@@ -194,27 +224,84 @@ body {
 	  z-index: -99;
 }
 
+.upper-left-title {
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+}
+
+.upper-left-title p {
+	position: sticky;
+	color: #fff;
+	font-size: 0.85rem;
+	font-weight: 600;
+	top: 0.5rem;
+	padding-left: 0.5rem;
+}
+
+.header .abs-wrapper {
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform-style: inherit;
+    /* 需要设置高度以使时差生效 */
+    height: inherit;
+}
 
 
-    .aside 
-    {    
-        background-color: aqua;
-        
-        position: sticky;
-        top: 1rem;
+/* Wrappers */
 
-        /* min-width: 10rem; */
-        width: var(--aside-width);
-        height: 50rem;
-        max-height: 60vh;
-        float: left; 
+.header h1 {
+  	padding: 2rem 4rem;
+	font-size: 2rem;
+	text-align: center;
+	text-shadow: var(--shadow-wide);
+}
 
-        margin-top: auto;
-		margin-right: 1rem;
-        
-        line-height: 3rem;
+#header-main-sliper {
+	color: white;
+	position: absolute;
+	margin: auto;
+	bottom: 1rem;
+	font-size: 1rem;
+	font-weight: 500;
+	text-shadow: var(--shadow-d);
+}
 
-    }
+.main-title-box {
+	background-color: var(--orange-l-mo);
+  	color: white;
+	min-width: 61.8vw;
+	max-width: 80vw;
+	box-shadow: 0.3rem 0.3rem 15px #333a;
+	backdrop-filter: blur(1.25px);
+	border-radius: 20px;
+	
+	border-top: 2.2px solid #eeea;
+    border-left: 0.8px solid #eeea;
+}
+
+
+
+.aside {    
+	background-color: aqua;
+
+	position: sticky;
+	top: 1rem;
+
+	/* min-width: 10rem; */
+	width: var(--aside-width);
+	height: 50rem;
+	max-height: 60vh;
+	float: left; 
+
+	margin-top: auto;
+	margin-right: 1rem;
+
+	line-height: 3rem;
+
+}
 
          
     .aside a{
@@ -242,13 +329,97 @@ body {
         text-align: center;
     }
 
-#header-main-sliper {
-	color: white;
-	position: absolute;
-	bottom: 1.5rem;
-	font-size: 1.25rem;
-	font-weight: 400;
+
+/* BUTTON SETTING */
+
+.ani-btn {
+/*    justify-content: center;*/
+	display: flex;
+	width: var(--main-width);
+	flex-flow: wrap;
 }
+
+.ani-btn .btn {
+	/* 溢出隐藏 */
+	overflow: hidden;
+	/* 相对定位 */
+	position: relative;
+	width: 9rem;
+	height: 2.5rem;
+	text-align: center;
+	margin: 0.5rem 0.5rem;
+	border-radius: 25px;
+	background-color: #fff;
+	/* 盒子阴影 */
+	box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
+}
+.ani-btn .label {
+	/* 字体图标可以直接使用字体大小来设置大小 */
+	font-size: 1.1rem;
+	font-weight: 600;
+	/* 缩放0.8倍 */
+	transform: scale(0.9);
+	/* 行高 让这个字体图标垂直居中于盒子内 */
+	line-height:2.5rem;
+	/* 设置一下过渡 */
+	/* 第三个值是贝塞尔曲线 让运动曲线有无限可能 可以到官网自行探索 https://cubic-bezier.com/ */
+	transition: all 0.4s cubic-bezier(0.31, -0.1, 0.43, 1.59);
+}
+.ani-btn .btn::before {
+	content: "";
+	/* 绝对定位 */
+	position: absolute;
+	top: 90%;
+	left: -110%;
+	width: 160%;
+	height: 260%;
+	/* 顺时针旋转45度 */
+	transform: rotate(45deg);
+	transition: all 0.4s cubic-bezier(0.31, -0.1, 0.43, 1.59);
+}
+.ani-btn .btn .confirm {
+	color: #c55;
+}
+.ani-btn .btn_confirm::before {
+	background-color: #c55;
+}
+.ani-btn .btn .cancel {
+	color: #5c5;
+}
+.ani-btn .btn_cancel::before {
+	background-color: #5c5;
+}
+
+.ani-btn .btn:hover::before {
+	top: -10%;
+	left: -10%;
+}
+.ani-btn .btn:hover .label {
+	color: #fff;
+	/* 鼠标移入 恢复到原来的大小 */
+	transform: scale(1);
+}
+
+.ani-btn a{
+	text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media screen and (max-width: 1024px) {
@@ -264,7 +435,7 @@ body {
 /*    padding: 1rem 1rem;*/
   }
 
-  article {
-/*    font-size: 1em;*/
-  }
-}
+
+
+
+
